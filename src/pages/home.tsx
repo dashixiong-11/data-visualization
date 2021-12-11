@@ -2,6 +2,8 @@ import React from 'react';
 import './home.scss';
 import headerBg from '../images/head_bg.png';
 import homeBg from '../images/bj.png';
+import titleBg from '../images/icon-title-bg@2x.d93aae1d.png';
+import WaveBall from '../components/WaveBall';
 import {Chart1} from '../components/chart-1';
 import {Chart2} from '../components/chart-2';
 import {Chart3} from '../components/chart-3';
@@ -16,7 +18,13 @@ import {Chart11} from '../components/chart-11';
 import {Chart12} from '../components/chart-12';
 import {Chart13} from '../components/chart-13';
 import {Chart14} from '../components/chart-14';
+import {Chart15} from '../components/chart-15';
 
+
+const TitleBg = ({title}) => <div className='box-title'>
+    <img src={titleBg} alt=""/>
+    <span> {title} </span>
+</div>
 export const Home = () => {
     const year = new Date().getFullYear();
 
@@ -52,26 +60,25 @@ export const Home = () => {
                 <section className="section4">
                     <Chart6/>
                     <div className="bordered 年龄段">
-                        <h2>犯罪人员年龄段分布</h2>
+                        {/*<TitleBg title='犯罪人员年龄分布'/>*/}
+                        <h2>犯罪人员年龄分布</h2>
                         <div className="charts">
+                            {/*
                             <Chart7/>
                             <Chart8/>
                             <Chart9/>
+*/}
+                            <Chart15/>
                         </div>
                     </div>
                 </section>
                 <section className="section5">
-                    <div className="bordered row1 案发类型">
-                        <h2>案发类型统计</h2>
-                        <div className="charts">
-                            <Chart10/>
-                            <Chart11/>
-                        </div>
-                    </div>
+                    <Chart3/>
                     <div className="bordered row2 案发街道">
                         <h2>案发街道统计</h2>
                         <div className="charts">
-                            <Chart12/>
+                            <WaveBall />
+                            {/*<Chart12/>*/}
                             <Chart13/>
                         </div>
                     </div>

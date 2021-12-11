@@ -2,7 +2,7 @@ import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
 import {createEchartsOptions} from '../shared/create-echarts-options';
 
-export const Chart5 = () => {
+export const Chart15 = () => {
     const divRef = useRef(null);
     const option = {
         series: [
@@ -133,7 +133,8 @@ export const Chart5 = () => {
                             }
                         ]
                     }
-                ]
+                ],
+                ...option
             });
         }, 2000);
     }, []);

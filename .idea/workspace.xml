@@ -19,8 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f21dae42-716d-4f15-9369-8a16acf9c61d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/chart-15.tsx" afterDir="false" />
+    <list default="true" id="f21dae42-716d-4f15-9369-8a16acf9c61d" name="Default Changelist" comment="更换背景， header 图片">
+      <change afterPath="$PROJECT_DIR$/src/components/WaveBall/index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/WaveBall/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chart-15.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chart-15.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chart-3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chart-3.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home.tsx" afterDir="false" />
     </list>
@@ -58,6 +62,19 @@
       <recent name="$PROJECT_DIR$/src/components" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -67,8 +84,17 @@
       <option name="presentableId" value="Default" />
       <updated>1639063008640</updated>
       <workItem from="1639063017552" duration="97000" />
-      <workItem from="1639137514528" duration="3110000" />
+      <workItem from="1639137514528" duration="3311000" />
+      <workItem from="1639147919540" duration="8041000" />
     </task>
+    <task id="LOCAL-00001" summary="更换背景， header 图片">
+      <created>1639141744672</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1639141744672</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,5 +110,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="更换背景， header 图片" />
+    <option name="LAST_COMMIT_MESSAGE" value="更换背景， header 图片" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="385" y="175" width="670" height="676" key="search.everywhere.popup" timestamp="1639220497365">
+      <screen x="0" y="25" width="1440" height="826" />
+    </state>
+    <state x="385" y="175" width="670" height="676" key="search.everywhere.popup/0.25.1440.826@0.25.1440.826" timestamp="1639220497365" />
   </component>
 </project>
