@@ -3,7 +3,10 @@ import './home.scss';
 import headerBg from '../images/head_bg.png';
 import homeBg from '../images/bj.png';
 import titleBg from '../images/icon-title-bg@2x.d93aae1d.png';
+import kaiguanji from '../images/kaiguanji.png';
+import yunxingzhuangtai from '../images/yunxingzhuangtai.png';
 import WaveBall from '../components/WaveBall';
+import Thermometer from '../components/Thermometer';
 import {Chart1} from '../components/chart-1';
 import {Chart2} from '../components/chart-2';
 import {Chart3} from '../components/chart-3';
@@ -46,51 +49,99 @@ export const Home = () => {
                 <div className='header-logout'>退出登录</div>
             </header>
             <main>
+                {/*
                 <section className="section1">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+
                     <Chart1/>
                     <Chart2/>
+
                 </section>
                 <section className="section2">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+
                     <Chart3/>
                     <Chart4/>
+
                 </section>
-                <section className="bordered section3">
-                    <Chart5/>
+*/}
+                <section className="section3">
+                    <div className="bordered 温湿度">
+                        <h2>温湿度监控</h2>
+                        <div className="charts">
+                            <Chart15/>
+                        </div>
+                        <div className="charts section3-wrapper">
+                            <div className="bordered2">
+                                <img src={kaiguanji} alt=""/>
+                                <span>开关机状态</span>
+                                <div className='button'>开机</div>
+                            </div>
+                            <div className="bordered2">
+                                <img src={yunxingzhuangtai} alt=""/>
+                                <span>运行状态</span>
+                                <div className='button'>驾驶模式</div>
+                            </div>
+                        </div>
+                    </div>
+                    {/*
+                    <div className="案发街道 bordered">
+                        <h2>温湿度监控</h2>
+                        <div className="charts">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+*/}
+                    <div className="年龄段 bordered">
+                        <h2>空调监控</h2>
+                        <div>
+                            《
+                            <span>空调机1</span>
+                            》
+                        </div>
+                        <div className="charts section3-wrapper">
+                            <div className="bordered2">
+                                <img src={kaiguanji} alt=""/>
+                                <span>开关机状态</span>
+                                <div className='button'>开机</div>
+                            </div>
+                            <div className="bordered2">
+                                <img src={yunxingzhuangtai} alt=""/>
+                                <span>运行状态</span>
+                                <div className='button'>驾驶模式</div>
+                            </div>
+                        </div>
+                    </div>
+                    {/*<Chart5/>*/}
                 </section>
                 <section className="section4">
                     <Chart6/>
                     <div className="bordered 年龄段">
                         {/*<TitleBg title='犯罪人员年龄分布'/>*/}
-                        <h2>犯罪人员年龄分布</h2>
-                        <div className="charts">
-                            {/*
-                            <Chart7/>
-                            <Chart8/>
-                            <Chart9/>
-*/}
-                            <Chart15/>
-                        </div>
+                        <Chart5/>
                     </div>
                 </section>
                 <section className="section5">
-                    <Chart3/>
-                    <div className="bordered row2 案发街道">
-                        <h2>案发街道统计</h2>
-                        <div className="charts">
-                            <WaveBall />
-                            {/*<Chart12/>*/}
-                            <Chart13/>
+                    <div className='bordered'>
+                        <Chart3/>
+                        <div className="案发街道">
+                            <div className="charts">
+                                <WaveBall/>
+                                <Thermometer/>
+                            </div>
                         </div>
                     </div>
-                    <div className="bordered row3 作案手段">
-                        <h2>作案手段分析</h2>
-                        <Chart14/>
+                    <div className="bordered 年龄段">
+                        {/*<h2>作案手段分析</h2>*/}
+                        {/*<Chart14/>*/}
                     </div>
                 </section>
             </main>
-            <footer>
-                &copy; xxx公司 2021-{year}
-            </footer>
         </div>
     );
 };

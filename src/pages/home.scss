@@ -57,14 +57,33 @@
     flex: 1;
     display: grid;
     grid-template:
-      "box1 box2 box4 box5" 755fr
-      "box3 box3 box4 box5" 363fr / 366fr 361fr 811fr 747fr;
+      "box3 box4 box5" 755fr
+      "box3 box4 box5" 363fr / 747fr 811fr 747fr;
     grid-column-gap: px(28);
     grid-row-gap: px(28);
     > section {text-align: center;}
     .bordered {
       border: 1px solid #00bef8;
       border-radius: 4px;
+      position: relative;
+      box-shadow: 0 0 2px 0 #0e325f, inset 0 0 2px 0 #0e325f;
+      background: rgba(15, 17, 58, 0.6);
+      &::before {
+        pointer-events: none;
+        content: '';position: absolute;left: 0;right: 0;bottom: 0;top: 0;
+        border-radius: 4px;
+        box-shadow: 17px 0 0 -16px #0e325f,
+        -17px 0 0 -16px #0e325f,
+        0 17px 0 -16px #0e325f,
+        0 -17px 0 -16px #0e325f,
+        9px 0 0 -8px #0d4483,
+        -9px 0 0 -8px #0d4483,
+        0 9px 0 -8px #0d4483,
+        0 -9px 0 -8px #0d4483,;
+      }
+    }
+    .bordered2 {
+      border: 1px solid #00bef8;
       position: relative;
       box-shadow: 0 0 2px 0 #0e325f, inset 0 0 2px 0 #0e325f;
       background: #0f113a;
@@ -82,20 +101,44 @@
         0 -9px 0 -8px #0d4483,;
       }
     }
+    /*
     > .section1 {
-      grid-area: box1;
+      grid-area: box3;
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
     }
     > .section2 {
-      grid-area: box2;
+      grid-area: box3;
+      display: flex;
+      justify-content: space-between;
+    }
+    */
+    > .section3 {
+      grid-area: box3;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-    }
-    > .section3 {
-      grid-area: box3;
+      .温湿度 {
+        height: px(700);
+      }
+      .section3-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        & > div {
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          width: 40%;
+          > .button {
+            cursor: pointer;
+            padding: 2px 8px;
+            background: linear-gradient(180deg, #024ad8, #6993ff)
+          }
+        }
+      }
     }
     > .section4 {
       grid-area: box4;
@@ -108,17 +151,9 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      > .row1 {
-        height: px(317);
-      }
-      > .row2 {
-        height: px(317);
-      }
-      > .row3 {
-        height: px(455);
-      }
+
     }
-    .管辖统计, .破获排名, .发案趋势, .案发时段, .战果, .籍贯, .年龄段, .案发类型, .案发街道, .作案手段 {
+    .管辖统计, .破获排名, .发案趋势, .案发时段, .战果, .籍贯, .年龄段, .案发类型, .案发街道, .作案手段, .温湿度 {
       height: px(315);
       display: flex;
       flex-direction: column;
@@ -144,6 +179,7 @@
       }
       */
       h2 {
+        margin-bottom: px(10);
         flex-shrink: 0;
         border: 1px solid #0a5299;
         border-bottom-left-radius: 4px;
@@ -174,9 +210,7 @@
     }
     .年龄段 {display: flex;flex-direction: column;
       height: px(363);
-      > .charts {
-        padding: px(30);
-      }
+
       &-图1, &-图2, &-图3 {
         flex: 1;display: flex; flex-direction: column;
       }

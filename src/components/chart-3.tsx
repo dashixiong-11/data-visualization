@@ -59,7 +59,7 @@ export const Chart3 = () => {
     }, []);
 
     return (
-        <div className="bordered 发案趋势">
+        <div className="发案趋势">
             <h2>温湿度曲线</h2>
             <div ref={divRef} className="chart"/>
         </div>

@@ -6,21 +6,23 @@ import './index.scss'
 export const Index = () => {
     const [width, setWidth] = useState(0)
     const [top, setTop] = useState(0)
+    const [height, setHeight] = useState(0)
     useEffect(() => {
         //画波浪球id:dom节点id, rate:占比, color1-4:由外到内圆的颜色
-        function drawRate(id, rate, color1, color2, color3, color4) {
+        function drawRate(id, rate, color1, color2) {
             //创建画布
             let canvas: any = document.getElementById(id);
             let ctx = canvas.getContext('2d');
             //canvas属性
-            let clientW = document.documentElement.clientWidth > 1000 ? document.documentElement.clientWidth : 1000;  //由于画布width和height自适应宽高
-            let cW = canvas.width = 200 / 1920 * clientW;
-            let cH = canvas.height = 200 / 1920 * clientW;
+            let divWith = document.getElementById('wave-ball').clientWidth
+            let divHeight = document.getElementById('wave-ball').clientHeight
+            let cW = canvas.width = divWith
+            let cH = canvas.height = divHeight
             let lineWidth = 2;
             //内圆属性
-            let r = 0.8 * cW / 2;   //半径
+            let r = 0.8 * cH / 2;   //半径
             let cR = r - 2 * lineWidth;
-            setWidth(cR * 2 + 16)
+            setWidth(cR * 2 + 20)
             //sin曲线属性
             let sX = 0;   //sin函数的初始x值
             let axisLength = cW; //轴长
@@ -37,7 +39,6 @@ export const Index = () => {
                 ctx.beginPath();
                 ctx.strokeStyle = '#08397d';
                 ctx.arc(cW / 2, cH / 2, cR + 1, 0, 2 * Math.PI);
-                setTop(cH / 16)
                 ctx.stroke();
                 ctx.beginPath();
                 ctx.arc(cW / 2, cH / 2, cR, 0, 2 * Math.PI);
@@ -104,11 +105,11 @@ export const Index = () => {
         setInterval(() => {
 
         }, 1000)
-        drawRate('canvas', '30', '#e9faff', 'transparent', 'red', '#29caff');
+        drawRate('canvas', '30', '#e9faff', 'transparent');
     }, [])
     return <>
-        <div className='wave-ball bordered'>
-            <img src={hm002} style={{width: width + 'px', top: top + 'px'}} alt=""/>
+        <div className='wave-ball charts' id='wave-ball'>
+            <img src={hm002} style={{width: width}} alt=""/>
             <canvas id='canvas'/>
         </div>
     </>

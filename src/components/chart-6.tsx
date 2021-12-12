@@ -71,7 +71,6 @@ export const Chart6 = () => {
 
   return (
     <div className="bordered 籍贯">
-      <h2>全市犯罪人员籍贯分布地</h2>
       <div className="wrapper">
         <div ref={divRef} className="chart"/>
         <div className="legend bordered">

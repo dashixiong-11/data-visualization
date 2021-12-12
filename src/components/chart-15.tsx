@@ -8,49 +8,37 @@ export const Chart15 = () => {
         series: [
             {
                 type: 'gauge',
-                center: ['50%', '60%'],
-                startAngle: 200,
-                endAngle: -20,
-                min: 0,
-                max: 60,
-                splitNumber: 12,
-                itemStyle: {
-                    color: '#FFAB91'
-                },
                 progress: {
                     show: true,
-                    width: 30
-                },
-                pointer: {
-                    show: false
+                    width: 8
                 },
                 axisLine: {
                     lineStyle: {
-                        width: 30
+                        width: 8
                     }
                 },
+                center: ['20%', '60%'],
+                radius:'50%',
                 axisTick: {
-                    distance: -45,
+                    show: true,
                     splitNumber: 5,
-                    lineStyle: {
-                        width: 2,
-                        color: '#999'
-                    }
+                    length: '3%',
+                    distance: 6
                 },
                 splitLine: {
-                    distance: -52,
-                    length: 14,
+                    length: '10%',
                     lineStyle: {
-                        width: 3,
+                        width: 1,
                         color: '#999'
                     }
                 },
                 axisLabel: {
-                    distance: -20,
+                    show: false,
+                    distance: 15,
                     color: '#999',
-                    fontSize: 20
+                    fontSize: 10
                 },
-                anchor: {
+                pointer: {
                     show: false
                 },
                 title: {
@@ -58,56 +46,114 @@ export const Chart15 = () => {
                 },
                 detail: {
                     valueAnimation: true,
-                    width: '60%',
-                    lineHeight: 40,
-                    borderRadius: 8,
-                    offsetCenter: [0, '-15%'],
-                    fontSize: 60,
-                    fontWeight: 'bolder',
-                    formatter: '{value} °C',
-                    color: 'auto'
+                    color: '#fff',
+                    fontSize: 15,
+                    offsetCenter: [0, '70%'],
+                    formatter: "{value}%"
                 },
                 data: [
                     {
-                        value: 20
+                        value: 60
                     }
                 ]
             },
             {
                 type: 'gauge',
-                center: ['50%', '60%'],
-                startAngle: 200,
-                endAngle: -20,
-                min: 0,
-                max: 60,
-                itemStyle: {
-                    color: '#FD7347'
-                },
                 progress: {
                     show: true,
                     width: 8
                 },
+                axisLine: {
+                    lineStyle: {
+                        width: 8
+                    }
+                },
+                axisTick: {
+                    show: true,
+                    splitNumber: 5,
+                    length: '3%',
+                    distance: 6
+                },
+                splitLine: {
+                    length: '10%',
+                    lineStyle: {
+                        width: 1,
+                        color: '#999'
+                    }
+                },
+                axisLabel: {
+                    show: false,
+                    distance: 15,
+                    color: '#999',
+                    fontSize: 10
+                },
                 pointer: {
                     show: false
                 },
-                axisLine: {
-                    show: false
-                },
-                axisTick: {
-                    show: false
-                },
-                splitLine: {
-                    show: false
-                },
-                axisLabel: {
+                title: {
                     show: false
                 },
                 detail: {
-                    show: false
+                    valueAnimation: true,
+                    color: '#fff',
+                    fontSize: 20,
+                    offsetCenter: [0, '70%'],
+                    formatter: "{value}%"
                 },
                 data: [
                     {
-                        value: 20
+                        value: 70
+                    }
+                ]
+            },
+            {
+                type: 'gauge',
+                progress: {
+                    show: true,
+                    width: 8
+                },
+                center: ['80%', '60%'],
+                radius:'50%',
+                axisLine: {
+                    lineStyle: {
+                        width: 8
+                    }
+                },
+                axisTick: {
+                    show: true,
+                    splitNumber: 5,
+                    length: '3%',
+                    distance: 6
+                },
+                splitLine: {
+                    length: '10%',
+                    lineStyle: {
+                        width: 1,
+                        color: '#999'
+                    }
+                },
+                axisLabel: {
+                    show: false,
+                    distance: 15,
+                    color: '#999',
+                    fontSize: 10
+                },
+                pointer: {
+                    show: false
+                },
+                title: {
+                    show: false
+                },
+                detail: {
+                    valueAnimation: true,
+                    color: '#fff',
+                    fontSize: 15,
+                    offsetCenter: [0, '70%'],
+                    formatter: "{value}%"
+                },
+                data: [
+                    {
+                        value: 70
                     }
                 ]
             }
@@ -126,13 +172,6 @@ export const Chart15 = () => {
                             }
                         ]
                     },
-                    {
-                        data: [
-                            {
-                                value: random
-                            }
-                        ]
-                    }
                 ],
                 ...option
             });

@@ -95,8 +95,7 @@ export const Chart2 = () => {
   }, []);
 
   return (
-    <div className="bordered 破获排名">
-      <h2>案件破获排名</h2>
+    <div className="bordered">
       <div ref={divRef} className="chart"/>
       <div className="legend">
         <span className="first"/> 破案排名1
