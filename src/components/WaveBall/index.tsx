@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import hm002 from '../../images/icon-hm-002.b909bb5e.png';
 import './index.scss'
 
 
 export const Index = ({ value }) => {
 	const [width, setWidth] = useState(0)
+	const mycanvas = useRef<any>(null)
 
-	const drawRate = (id, rate, color1, color2) => {
+	const drawRate = (rate, color2) => {
 		//创建画布
-		let canvas: any = document.getElementById(id);
-		let ctx = canvas.getContext('2d');
+		let ctx = mycanvas.current.getContext('2d');
 		//canvas属性
 		let divWith = document.getElementById('wave-ball').clientWidth
-		let divHeight = document.getElementById('wave-ball').clientHeight
-		let cW = canvas.width = divWith
-		let cH = canvas.height = divHeight
+		let divHeight = document.getElementById('charts-wrapper').clientHeight
+		let cW = mycanvas.current.width = divWith
+		let cH = mycanvas.current.height = divHeight
+		console.log(cH);
 		let lineWidth = 2;
 		//内圆属性
 		let r = 0.8 * cH / 2;   //半径
@@ -75,11 +76,12 @@ export const Index = ({ value }) => {
 			ctx.save();
 
 			let size = 0.3 * cR;
-			ctx.font = size + 'px Microsoft Yahei';
+			ctx.font = size * 1.5 + 'px Arial Narrow Bold';
 			ctx.textAlign = 'center';
 			ctx.fillStyle = "#ffffff";
-			ctx.fillText('当前湿度', cW / 2, cW / 2 + size - 10);
-			ctx.fillText(rate + '%', cW / 2, cW / 2 + size * 2);
+			ctx.fillText(rate + '%', cW / 2, cW / 2 + size - 10);
+			ctx.font = size * 0.6 + 'px Microsoft Yahei';
+			ctx.fillText('当前湿度', cW / 2, cW / 2 + size + 10);
 
 			ctx.restore();
 		};
@@ -101,12 +103,12 @@ export const Index = ({ value }) => {
 	}
 	useEffect(() => {
 		console.log(value);
-		drawRate('canvas', value * 100 + '', '#e9faff', 'transparent');
+		drawRate(value * 100 + '', 'transparent');
 	}, [value])
 	return <>
 		<div className='wave-ball charts' id='wave-ball'>
 			<img src={hm002} style={{ width: width }} alt="" />
-			<canvas id='canvas' />
+			<canvas id='canvas' ref={mycanvas} />
 		</div>
 	</>
 }

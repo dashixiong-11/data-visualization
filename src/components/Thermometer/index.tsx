@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import './index.scss'
 
 
 export const Index = ({ value }) => {
+	const mycanvas = useRef<any>(null)
 
 	const thermograph = (obj) => {
-		//    方法一
-		let canvas: any = document.getElementById('canvas2');
-		let c = canvas.getContext('2d');
+		let c = mycanvas.current.getContext('2d');
 		let divWith = document.getElementById('thermometer').clientWidth
-		let divHeight = document.getElementById('thermometer').clientHeight
-		let cw = canvas.width = divWith
-		let ch = canvas.height = divHeight
+		let divHeight = document.getElementById('charts-wrapper').clientHeight
+		let cw = mycanvas.current.width = divWith
+		let ch = mycanvas.current.height = divHeight
 		let objr = ch / 20
 		let L = objr * 12
 		//整体调整温度计相对canvas画布的位置
-		c.translate(cw / 2, ch - ((ch - L) / 2));
+		c.translate(cw / 3, ch - ((ch - L) / 2));
 		//    预定义全部线条样式
 		c.lineWidth = objr / 10;
 		c.strokeStyle = obj.borderColor;
@@ -71,11 +70,8 @@ export const Index = ({ value }) => {
 		// 颜色线性渐变  温度条温度不同 颜色渐变效果不同
 		var grd = c.createLinearGradient(0, -r, 0, -r - L);
 		grd.addColorStop(0, obj.temColor1);
-		// grd.addColorStop(0, '#0000ff');
-		// grd.addColorStop(0.5, '#00ff00');
 		grd.addColorStop(0.5, '#00FF4D');
 
-		// grd.addColorStop(1, '#ff0000');
 		grd.addColorStop(1, obj.temColor2);
 		c.fillStyle = grd;
 
@@ -114,8 +110,10 @@ export const Index = ({ value }) => {
 			c.stroke();
 			c.fillText(t1 - (t1 - t2) / NUM * i + "", -startX * 3, y1 + (y2 - y1) / NUM * i);
 		}
-		// c.beginPath();
 		c.fillText("℃", startX * 2, y2 - r);
+		c.fillText('当前温度', cw / 3, y2 / 3);
+		c.font = `normal ${objr * 3}px 微软雅黑`; //字体样式设置
+		c.fillText(obj.t + "℃", cw / 3, y2 / 2);
 	}
 
 	useEffect(() => {
@@ -132,7 +130,7 @@ export const Index = ({ value }) => {
 
 	return <>
 		<div className='thermometer charts' id='thermometer'>
-			<canvas id='canvas2' />
+			<canvas id='canvas2' ref={mycanvas} />
 		</div>
 	</>
 }

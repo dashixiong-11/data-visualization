@@ -86,8 +86,8 @@ export const Chart15 = () => {
 					}
 				},
 				splitLine: {
-					distance: -10,
-					length: 10,
+					distance: -9,
+					length: 5,
 					lineStyle: {
 						color: '#fff',
 						width: 2

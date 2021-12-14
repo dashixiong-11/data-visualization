@@ -1,0 +1,40 @@
+@import "../../shared/helper";
+.setting {
+	display: flex;
+	justify-content: space-between;
+	-moz-user-select: none; /*火狐*/
+	-webkit-user-select: none; /*webkit浏览器*/
+	-ms-user-select: none; /*IE10*/
+	-khtml-user-select: none; /*早期浏览器*/
+	user-select: none;
+	background: #fff;
+	flex: 1;
+	.img-wrapper {
+		position: relative;
+		#wrapper {
+			border: 2px dashed red;
+		}
+		img {
+			width: 100%;
+		}
+	}
+	.right {
+		width: 800px;
+	}
+}
+
+.card {
+	box-sizing: border-box;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(36, 9, 81, 0.6);
+	color: #fff;
+	border-radius: 6px;
+	font-size: px(30);
+	padding: px(10);
+	&.active {
+		border: 1px solid red;
+	}
+}
