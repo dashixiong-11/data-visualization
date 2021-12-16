@@ -1,4 +1,8 @@
 @import "../shared/helper";
+ul,
+li {
+	list-style: none;
+}
 %legend {
 	height: px(40);
 	display: flex;
@@ -14,6 +18,7 @@
 		margin: 0 px(10);
 	}
 }
+
 .home {
 	flex: 1;
 	display: flex;
@@ -81,6 +86,33 @@
 			"box3 box4 box5" 363fr / 5fr 10fr 5fr;
 		grid-column-gap: px(28);
 		grid-row-gap: px(28);
+
+		.chart-wrapper {
+			height: px(300);
+			display: flex;
+			.chart {
+				flex: 1;
+			}
+		}
+		h2 {
+			display: inline-block;
+			margin-bottom: px(10);
+			flex-shrink: 0;
+			border: 1px solid #0a5299;
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+			font-size: px(22);
+			line-height: px(24);
+			padding: px(10) px(28);
+			text-shadow: 0 0 px(3) white;
+		}
+
+		.section-top-height {
+			height: px(800);
+		}
+		.section-bottom-height {
+			height: px(400);
+		}
 		.switch-bar {
 			display: flex;
 			align-items: center;
@@ -97,9 +129,13 @@
 			}
 		}
 
+		.legend {
+			@extend %legend;
+		}
 		> section {
 			text-align: center;
 		}
+
 		.bordered {
 			border: 1px solid #00bef8;
 			border-radius: 4px;
@@ -140,34 +176,34 @@
 				line-height: 2;
 			}
 		}
-		.空调监控 {
-			height: px(363);
-		}
 
 		> .section3 {
 			grid-area: box3;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-			.温湿度 {
-				height: px(800);
+
+			.section3-top,
+			.section3-bottom {
+				display: flex;
+				flex-direction: column;
 			}
+			.box3-wrapper {
+				display: flex;
+				justify-content: space-around;
+				& > li {
+					padding: px(10) px(30);
+					display: flex;
+					align-items: center;
+					flex-direction: column;
+					justify-content: center;
+				}
+			}
+
 			.section3-wrapper {
 				display: flex;
 				align-items: center;
 				justify-content: space-around;
-				& > div {
-					display: flex;
-					padding: 10px 0;
-					align-items: center;
-					justify-content: center;
-					flex-direction: column;
-					width: 20%;
-					> .button {
-						padding: 2px 8px;
-						background: linear-gradient(180deg, #024ad8, #6993ff);
-					}
-				}
 			}
 		}
 		> .section4 {
@@ -181,213 +217,42 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-		}
-		.管辖统计,
-		.破获排名,
-		.发案趋势,
-		.案发时段,
-		.战果,
-		.籍贯,
-		.年龄段,
-		.案发类型,
-		.案发街道,
-		.作案手段,
-		.温湿度 {
-			height: px(315);
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			h2 {
-				margin-bottom: px(10);
-				flex-shrink: 0;
-				border: 1px solid #0a5299;
-				border-bottom-left-radius: 4px;
-				border-bottom-right-radius: 4px;
-				font-size: px(22);
-				line-height: px(24);
-				padding: px(10) px(28);
-				text-shadow: 0 0 px(3) white;
-			}
-			.charts {
-				width: 100%;
-				flex: 1;
-				display: flex;
-			}
-			.chart {
-				flex: 1;
-				width: 100%;
-			}
-		}
-		.发案趋势,
-		.案发时段 {
-			height: px(363);
-		}
-		.chart11,
-		.chart12 {
-			flex: 1;
-			display: flex;
-			flex-direction: column;
-			> .chart {
-				display: flex;
-				> .main {
-					flex: 1;
-				}
-			}
-			.legend {
-				@extend %legend;
-			}
-		}
-		.年龄段 {
-			display: flex;
-			flex-direction: column;
-			height: px(363);
 
-			&-图1,
-			&-图2,
-			&-图3 {
-				flex: 1;
+			& > .section5-top {
 				display: flex;
 				flex-direction: column;
-			}
-			&-图1,
-			&-图2 {
-				.legend {
-					@extend %legend;
-					.male {
-						background: #33a4fa;
+				#charts-wrapper {
+					& > div {
+						width: 49.9%;
 					}
-					.female {
-						background: #8d70f8;
-					}
-				}
-				.chart {
-					position: relative;
-					display: flex;
-					> .main {
-						flex: 1;
-					}
-					> .text {
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						transform: translate(-50%, -50%);
-						color: #33a4fa;
-						font-size: px(40);
-						text-shadow: 0 0 px(20) #33a4fa;
-						font-weight: bold;
-					}
-				}
-			}
-			&-图2 {
-				width: px(290);
-				flex-shrink: 0;
-				.legend {
-					justify-content: flex-start;
-				}
-			}
-			&-图3 {
-				border: 1px solid #08397d;
-				h3 {
-					font-size: px(20);
-					color: #7ab6db;
-					margin-top: px(6);
 				}
 			}
 		}
-		.籍贯 {
-			height: px(753);
-			background: transparent;
-			> .wrapper {
-				position: relative;
-				width: 100%;
-				flex: 1;
-				display: flex;
-				flex-direction: column;
-				.chart {
-					flex: 1;
-				}
-				.legend {
-					position: absolute;
-					top: px(40);
-					left: px(20);
-					display: flex;
-					align-items: center;
-					font-size: px(22);
-					padding: px(20) px(10) px(20) 0;
-					border-radius: 0;
-					.icon {
-						margin: 0 px(10);
-						display: inline-block;
-						width: px(16);
-						height: px(16);
-						border-radius: 50%;
-						background: #1cecd9;
-					}
-				}
-				.notes {
-					position: absolute;
-					bottom: px(10);
-					right: px(10);
+	}
+
+	.战果,
+	.作案手段 {
+		padding: 0 px(24);
+		> table {
+			width: 100%;
+			table-layout: fixed;
+			margin-top: px(25);
+			border-collapse: collapse;
+			th,
+			td {
+				border: 1px solid #1a3671;
+			}
+			thead {
+				th {
+					height: px(70);
+					box-shadow: inset 0 0 px(60) 0 #1f3d85;
 				}
 			}
-		}
-		.战果,
-		.作案手段 {
-			padding: 0 px(24);
-			> table {
-				width: 100%;
-				table-layout: fixed;
-				margin-top: px(25);
-				border-collapse: collapse;
-				th,
+			tbody {
 				td {
-					border: 1px solid #1a3671;
-				}
-				thead {
-					th {
-						height: px(70);
-						box-shadow: inset 0 0 px(60) 0 #1f3d85;
-					}
-				}
-				tbody {
-					td {
-						height: px(50);
-						width: px(84);
-						background: #1c2456;
-					}
-				}
-			}
-		}
-		.作案手段 {
-			> table {
-				tbody {
-					td {
-						height: px(26);
-					}
-				}
-			}
-		}
-		.破获排名 {
-			height: px(423);
-			.legend {
-				display: flex;
-				align-items: center;
-				justify-content: flex-end;
-				width: 100%;
-				padding: 0 px(20) px(10);
-				> .first,
-				> .second {
-					display: inline-block;
-					width: px(18);
-					height: px(12);
-					background: red;
-					margin: 0 px(10);
-				}
-				.first {
-					background: linear-gradient(90deg, #2034f9 0%, #04a1ff 100%);
-				}
-				.second {
-					background: linear-gradient(90deg, #b92ae8 0%, #6773e7 100%);
+					height: px(50);
+					width: px(84);
+					background: #1c2456;
 				}
 			}
 		}

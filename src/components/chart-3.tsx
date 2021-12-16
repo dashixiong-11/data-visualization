@@ -104,9 +104,6 @@ export const Chart3 = ({ callback }) => {
 	}, [temp, humidity])
 
 	return (
-		<div className="发案趋势">
-			<h2>温湿度曲线</h2>
-			<div ref={divRef} className="chart" />
-		</div>
+		<div ref={divRef} className="chart" />
 	);
 };

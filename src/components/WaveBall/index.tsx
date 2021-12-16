@@ -1,11 +1,25 @@
 import React, { useEffect, useState, useRef } from "react";
 import hm002 from '../../images/icon-hm-002.b909bb5e.png';
+import { Draw } from './draw'
 import './index.scss'
 
 
 export const Index = ({ value }) => {
 	const [width, setWidth] = useState(0)
 	const mycanvas = useRef<any>(null)
+
+	// useEffect(() => {
+	// 	let divWith = document.getElementById('wave-ball').clientWidth
+	// 	let divHeight = document.getElementById('wave-ball').clientHeight
+	// 	console.log('divHeight');
+	// 	console.log(divHeight);
+
+	// 	Draw({
+	// 		id: 'canvas',
+	// 		height: divHeight,
+	// 		width: divWith
+	// 	})
+	// }, [])
 
 	const drawRate = (rate, color2) => {
 		//创建画布
@@ -76,11 +90,11 @@ export const Index = ({ value }) => {
 			ctx.save();
 
 			let size = 0.3 * cR;
-			ctx.font = size * 1.5 + 'px Arial Narrow Bold';
+			ctx.font = size * 1.5 + 'px Microsoft Yahei';
 			ctx.textAlign = 'center';
 			ctx.fillStyle = "#ffffff";
 			ctx.fillText(rate + '%', cW / 2, cW / 2 + size - 10);
-			ctx.font = size * 0.6 + 'px Microsoft Yahei';
+			ctx.font = size * 0.68 + 'px Microsoft Yahei';
 			ctx.fillText('当前湿度', cW / 2, cW / 2 + size + 10);
 
 			ctx.restore();
@@ -101,12 +115,24 @@ export const Index = ({ value }) => {
 		}
 		render();
 	}
+
+
+
 	useEffect(() => {
-		console.log(value);
-		drawRate(value * 100 + '', 'transparent');
+		// drawRate(value * 100 + '', 'transparent');
+		let divWith = document.getElementById('wave-ball').clientWidth
+		let divHeight = document.getElementById('wave-ball').clientHeight
+		console.log('divHeight');
+		console.log(divHeight);
+
+		Draw({
+			id: 'canvas',
+			height: divHeight,
+			width: divWith
+		})
 	}, [value])
 	return <>
-		<div className='wave-ball charts' id='wave-ball'>
+		<div className='wave-ball' id='wave-ball'>
 			<img src={hm002} style={{ width: width }} alt="" />
 			<canvas id='canvas' ref={mycanvas} />
 		</div>

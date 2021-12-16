@@ -1,17 +1,14 @@
 @import "../../shared/helper";
 
 .wave-ball {
-  position: relative;
-  & > img {
-    position: absolute;
-    top:50%;
-    left: 50%;
-    right: 0;
-    transform: translate(-50%,-50%);
-  }
-  background:  no-repeat;
-  background-size: cover;
-  #canvas {
-    width: 100%;
-  }
+	position: relative;
+	& > img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		right: 0;
+		transform: translate(-50%, -50%);
+	}
+	background: no-repeat;
+	background-size: cover;
 }

@@ -167,21 +167,7 @@ export const Chart15 = () => {
 	};
 	useEffect(() => {
 		let myChart = echarts.init(divRef.current);
-		setInterval(function () {
-			const random = +(Math.random() * 60).toFixed(2);
-			myChart.setOption({
-				series: [
-					{
-						data: [
-							{
-								value: random
-							}
-						]
-					},
-				],
-				...option
-			});
-		}, 2000);
+		myChart.setOption({ ...option });
 	}, []);
-	return (<div ref={divRef} className="chart" />);
+	return (<div ref={divRef} className='chart' />);
 };

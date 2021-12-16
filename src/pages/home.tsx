@@ -101,77 +101,90 @@ export const Home = () => {
 			</header>
 			<main>
 				<section className="section3">
-					<div className="bordered 温湿度">
-						<h2>恒温一体机</h2>
+					<div className="bordered section3-top section-top-height">
+						<div className="section-header">
+							<h2>恒温一体机</h2>
+						</div>
 						<div className='switch-bar'>
 							<img src={left} alt="" />
 							<span>空调机1</span>
 							<img src={right} alt="" />
 						</div>
-						<div className="charts">
+						<div className="chart-wrapper">
 							<Chart15 />
 						</div>
-						<div className="charts section3-wrapper">
-							<div className="bordered2">
-								<img src={kaiguanji} alt="" />
-								<span>开关机状态</span>
-								<div className='button'>开机</div>
-							</div>
-							<div className="bordered2">
-								<img src={yunxingzhuangtai} alt="" />
-								<span>运行状态</span>
-								<div className='button'>驾驶模式</div>
-							</div>
-							<div className="bordered2">
-								<img src={shuiweibaoj} alt="" />
-								<span>水位报警</span>
-								<div className='button'>上水位</div>
-							</div>
+						<div style={{ display: 'flex', flex: 1, justifyContent: 'center', flexDirection: 'column' }}>
+							<ul className="box3-wrapper">
+								<li className="bordered2">
+									<img src={kaiguanji} alt="" />
+									<span>开关机状态</span>
+									<div className='button'>开机</div>
+								</li>
+								<li className="bordered2">
+									<img src={yunxingzhuangtai} alt="" />
+									<span>运行状态</span>
+									<div className='button'>驾驶模式</div>
+								</li>
+								<li className="bordered2">
+									<img src={shuiweibaoj} alt="" />
+									<span>水位报警</span>
+									<div className='button'>上水位</div>
+								</li>
+							</ul>
 						</div>
 					</div>
-					<div className="空调监控 bordered">
-						<h2>空调监控</h2>
+					<div className="section3-bottom bordered section-bottom-height">
+						<div className="section-header">
+							<h2>空调监控</h2>
+						</div>
 						<div className='switch-bar'>
 							<img src={left} alt="" />
 							<span>空调机1</span>
 							<img src={right} alt="" />
 						</div>
-						<div className="charts section3-wrapper">
-							<div className="bordered2">
-								<img src={kaiguanji} alt="" />
-								<span>开关机状态</span>
-								<div className='button'>开机</div>
-							</div>
-							<div className="bordered2">
-								<img src={wenduji} alt="" />
-								<span>设定温度</span>
-								<div className='button'>20°C</div>
-							</div>
-							<div className="bordered2">
-								<img src={kongtiao} alt="" />
-								<span>当前室温</span>
-								<div className='button'>28°C</div>
-							</div>
+						<div style={{ display: 'flex', flex: 1, justifyContent: 'center', flexDirection: 'column' }}>
+							<ul className="box3-wrapper">
+								<li className="bordered2">
+									<img src={kaiguanji} alt="" />
+									<span>开关机状态</span>
+									<div className='button'>开机</div>
+								</li>
+								<li className="bordered2">
+									<img src={wenduji} alt="" />
+									<span>设定温度</span>
+									<div className='button'>20°C</div>
+								</li>
+								<li className="bordered2">
+									<img src={kongtiao} alt="" />
+									<span>当前室温</span>
+									<div className='button'>28°C</div>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</section>
 				<section className="section4">
-					<Chart6 />
-					<div className="bordered 空调监控">
+					<div className='bordered section4-top section-top-height'></div>
+					<div className="bordered setcion4-bottom section-bottom-height">
 						<Chart5 />
 					</div>
 				</section>
 				<section className="section5">
-					<div className='bordered'>
-						<Chart3 callback={GetData} />
-						<div className="温湿度" id='charts-wrapper'>
-							<div className="charts">
+					<div className='bordered section5-top section-top-height'>
+						<div className="section-header">
+							<h2>温湿度曲线</h2>
+						</div>
+						<div className="chart-wrapper">
+							<Chart3 callback={GetData} />
+						</div>
+						<div style={{ display: 'flex', flex: 1, justifyContent: 'center', flexDirection: 'column' }}>
+							<div className='chart-wrapper' id='charts-wrapper'>
 								<WaveBall value={humidity} />
 								<Thermometer value={temp} />
 							</div>
 						</div>
 					</div>
-					<div className="bordered 空调监控">
+					<div className="bordered section5-bottom section-bottom-height">
 					</div>
 				</section>
 			</main>
