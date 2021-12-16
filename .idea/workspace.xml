@@ -21,7 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f21dae42-716d-4f15-9369-8a16acf9c61d" name="Default Changelist" comment="添加 波浪球">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/setting/setting.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/setting/setting.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WaveBall/draw.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WaveBall/draw.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WaveBall/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WaveBall/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +74,8 @@
       <workItem from="1639290622566" duration="17898000" />
       <workItem from="1639324254453" duration="763000" />
       <workItem from="1639413849283" duration="614000" />
-      <workItem from="1639490983230" duration="6723000" />
+      <workItem from="1639490983230" duration="7547000" />
+      <workItem from="1639655786841" duration="5311000" />
     </task>
     <task id="LOCAL-00001" summary="更换背景， header 图片">
       <created>1639141744672</created>
@@ -96,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639323465410</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="div可拖拽">
+      <created>1639498653426</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1639498653426</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,16 +127,17 @@
     <MESSAGE value="更换背景， header 图片" />
     <MESSAGE value="添加 波浪球" />
     <MESSAGE value="规划好大概布局" />
-    <option name="LAST_COMMIT_MESSAGE" value="规划好大概布局" />
+    <MESSAGE value="div可拖拽" />
+    <option name="LAST_COMMIT_MESSAGE" value="div可拖拽" />
   </component>
   <component name="WindowStateProjectService">
     <state x="229" y="74" key="SettingsEditor" timestamp="1639331523746">
       <screen x="0" y="25" width="1440" height="826" />
     </state>
     <state x="229" y="74" key="SettingsEditor/0.25.1440.826@0.25.1440.826" timestamp="1639331523746" />
-    <state x="385" y="175" width="670" height="676" key="search.everywhere.popup" timestamp="1639498223943">
+    <state x="385" y="175" width="670" height="676" key="search.everywhere.popup" timestamp="1639657988176">
       <screen x="0" y="25" width="1440" height="826" />
     </state>
-    <state x="385" y="175" width="670" height="676" key="search.everywhere.popup/0.25.1440.826@0.25.1440.826" timestamp="1639498223943" />
+    <state x="385" y="175" width="670" height="676" key="search.everywhere.popup/0.25.1440.826@0.25.1440.826" timestamp="1639657988176" />
   </component>
 </project>

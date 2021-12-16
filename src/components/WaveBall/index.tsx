@@ -128,7 +128,9 @@ export const Index = ({ value }) => {
 		Draw({
 			id: 'canvas',
 			height: divHeight,
-			width: divWith
+			width: divWith,
+			color:['rgba(0,190,248,.6)','rgba(13,68,131,.6)','rgba(14,50,95,.6)'],
+			value:value * 100
 		})
 	}, [value])
 	return <>
