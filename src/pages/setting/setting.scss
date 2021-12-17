@@ -19,7 +19,7 @@
     }
 
     img {
-      width: 100%;
+      width: px(813);
     }
   }
 
@@ -36,9 +36,9 @@
   left: 0;
   background: rgba(36, 9, 81, 0.6);
   color: #fff;
-  border-radius: px(20);
-  font-size: px(25);
-  padding: px(10);
+  border-radius: px(15);
+  font-size: px(20);
+  padding: px(8);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -65,7 +65,7 @@
     li {
       font-family: Arial, sans-serif, microsoft yahei, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", Helvetica Neue,
       Helvetica, PingFang SC, Hiragino Sans GB;
-      list-style: 1.5;
+      list-style: none;
     }
   }
 

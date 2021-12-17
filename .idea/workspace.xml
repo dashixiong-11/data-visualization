@@ -20,10 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f21dae42-716d-4f15-9369-8a16acf9c61d" name="Default Changelist" comment="添加 波浪球">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WaveBall/draw.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WaveBall/draw.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WaveBall/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WaveBall/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/setting/setting.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/setting/setting.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/setting/setting.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/setting/setting.tsx" afterDir="false" />
@@ -95,7 +92,7 @@
       <workItem from="1639413849283" duration="614000" />
       <workItem from="1639490983230" duration="7547000" />
       <workItem from="1639655786841" duration="5311000" />
-      <workItem from="1639709824734" duration="13119000" />
+      <workItem from="1639709824734" duration="21123000" />
     </task>
     <task id="LOCAL-00001" summary="更换背景， header 图片">
       <created>1639141744672</created>
@@ -125,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639498653426</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="完善 waveball">
+      <created>1639730380338</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1639730380338</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,7 +152,8 @@
     <MESSAGE value="添加 波浪球" />
     <MESSAGE value="规划好大概布局" />
     <MESSAGE value="div可拖拽" />
-    <option name="LAST_COMMIT_MESSAGE" value="div可拖拽" />
+    <MESSAGE value="完善 waveball" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善 waveball" />
   </component>
   <component name="WindowStateProjectService">
     <state x="229" y="74" key="SettingsEditor" timestamp="1639331523746">
