@@ -25,12 +25,14 @@ export const Draw = ({id, height, width, color, value}) => {
         step++
         for (let i = 0; i < lines; i++) {
             ctx.fillStyle = color[i]
-            let angle = (step + i * 270 / lines) * Math.PI / 180
+            let angle = (step + i * 180 / lines) * Math.PI / 90
             let deltaHeight = Math.sin(angle) * 20
             let deltaHeightRight = Math.cos(angle) * 20
             ctx.beginPath()
             ctx.moveTo(0, canvas.height * h + deltaHeight)
             ctx.bezierCurveTo(canvas.width / 2, canvas.height * h + deltaHeight, canvas.width / 2, canvas.height * h + deltaHeightRight, canvas.width, canvas.height * h + deltaHeightRight)
+            // ctx.bezierCurveTo(0, canvas.height * h + deltaHeight, canvas.width / 4, canvas.height * h + deltaHeightRight+ 50, canvas.width/2, canvas.height * h + deltaHeightRight)
+            // ctx.bezierCurveTo(canvas.width/2, canvas.height * h + deltaHeightRight, canvas.width * 3/4, canvas.height * h + deltaHeightRight- 50, canvas.width, canvas.height * h + deltaHeightRight)
             ctx.lineTo(canvas.width, canvas.height)
             ctx.lineTo(0, canvas.height)
             ctx.lineTo(0, canvas.height * h + deltaHeight)

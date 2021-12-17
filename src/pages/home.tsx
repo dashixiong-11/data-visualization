@@ -14,7 +14,6 @@ import WaveBall from '../components/WaveBall';
 import Thermometer from '../components/Thermometer';
 import { Chart3 } from '../components/chart-3';
 import { Chart5 } from '../components/chart-5';
-import { Chart6 } from '../components/chart-6';
 import { Chart15 } from '../components/chart-15';
 
 
@@ -164,8 +163,8 @@ export const Home = () => {
 					</div>
 				</section>
 				<section className="section4">
-					<div className='bordered section4-top section-top-height'></div>
-					<div className="bordered setcion4-bottom section-bottom-height">
+					<div className='bordered section4-top section-top-height' />
+					<div className="bordered section4-bottom section-bottom-height">
 						<Chart5 />
 					</div>
 				</section>

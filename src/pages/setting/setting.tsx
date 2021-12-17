@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react"
 import demoImage from '../../images/demo_picture.png'
+import { px } from '../../shared/px';
 import './setting.scss'
 
 
@@ -26,9 +27,9 @@ export const Setting = () => {
 		let diffY = _e.clientY - target.offsetTop
 
 		/* 低版本ie bug:物体被拖出浏览器可是窗口外部时，还会出现滚动条，
-										解决方法是采用ie浏览器独有的2个方法setCapture()\releaseCapture(),这两个方法，
-										可以让鼠标滑动到浏览器外部也可以捕获到事件，而我们的bug就是当鼠标移出浏览器的时候，
-										限制超过的功能就失效了。用这个方法，即可解决这个问题。注：这两个方法用于onmousedown和onmouseup中 */
+		解决方法是采用ie浏览器独有的2个方法setCapture()\releaseCapture(),这两个方法，
+		可以让鼠标滑动到浏览器外部也可以捕获到事件，而我们的bug就是当鼠标移出浏览器的时候，
+		限制超过的功能就失效了。用这个方法，即可解决这个问题。注：这两个方法用于onmousedown和onmouseup中 */
 		if (typeof target.setCapture !== 'undefined') {
 			target.setCapture()
 		}
@@ -60,17 +61,6 @@ export const Setting = () => {
 			this.onmousemove = null
 			this.onmouseup = null // 预防鼠标弹起来后还会循环（即预防鼠标放上去的时候还会移动）
 			sid.current = null
-			/*
-											const copy = JSON.parse(JSON.stringify(cardList))
-											copy.forEach(item => {
-													if (item.id === selectedId) {
-															item.translateX = left
-															item.translateY = top
-													}
-											})
-											setCardList(copy)
-			*/
-
 			// 修复低版本ie bug
 			if (typeof this.releaseCapture !== 'undefined') {
 				this.releaseCapture()
